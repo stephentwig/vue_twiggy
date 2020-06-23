@@ -11,12 +11,12 @@
 <div class="nav-bar"></div>
 
 <div id="app">
-    <div id="product">
+    <div id="product" class="product">
 
         <div class="product-image">
             <img v-bind:src="image">
         </div>
-
+    
         <div class="product-info">
             <h1> <a :href="url">{{product }}</a> </h1>
 
@@ -33,10 +33,13 @@
             </ul>
 
             <!-- for multiple items in list or array -->
-            <div v-for="variant in variants" :key="variant.variantId">
-                <p>{{ variant.variantColor }}</p>
+            <div v-for="variant in variants" 
+                :key="variant.variantId"
+                class="color-box"
+                :style="{ backgroundColor: variant.variantColor }"
+                @mouseover="updateProduct(variant.variantImage)">
             </div>
-
+            <!-- v-on or the @ sign -->
             <button v-on:click="addToCart">Add to Cart </button>
 
             <div class="cart">
