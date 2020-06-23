@@ -17,16 +17,23 @@ var app = new Vue ({
             {  
                 variantId: 2235 ,
                 variantColor: "blue",
-                variantImage: 'images/vmSocks-green-onWhite.jpg'
+                variantImage: 'images/vmSocks-blue-onWhite.jpg'
 
-            },
+            }
         ],
-        cart: 0,
+        cart: 0
+        
+         },
+         
         methods: {
             addToCart: function () {
                 this.cart += 1
+            },
+
+            updateProduct: function (variantImage) {
+                this.image = variantImage
             }
-        }
+        
 
 
     }
